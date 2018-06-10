@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,9 @@ import { SearchService } from './search.service';
 })
 export class AppComponent {
   
-  SearchText : string;
 
+
+  
 
 
 

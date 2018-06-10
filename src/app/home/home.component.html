@@ -1,0 +1,51 @@
+<h2>
+  Welcome to Custom Search Engine</h2>
+<div class="container color-dark">
+  <form>
+    <div class="col">
+      <input type="text" class="txt" id="txtSearch" name="txtSearch" autocomplete="off" required minlength="2" placeholder="Enter Your Search Text..."
+        [(ngModel)]="SearchText" #txtSearch="ngModel">
+      <input type="submit" value="Submit" class="btn" (click)="getCustomSearchResult()" [disabled]="txtSearch.invalid">
+    </div>
+    <div *ngIf="txtSearch.invalid && (txtSearch.dirty || txtSearch.touched)" class="alert-danger">
+      <div *ngIf="txtSearch.errors.required">
+        *Search text is required.
+      </div>
+      <div *ngIf="txtSearch.errors.minlength">
+        *Search text must be at least 4 characters long.
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+    <p>Search Result of {{SearchText}}</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>*</th>
+          <th>Title</th>
+          <th>Snippet</th>
+          <th>Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of SearchResult; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{r.title}}</td>
+          <td>{{r.snippet}}</td>
+          <td>
+            <a href="{{r.link}}" target="_blank">View</a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot [hidden]="HideFooter">
+        <tr>
+          <td colspan="4">No Results</td>
+        </tr>
+      </tfoot>
+    </table>  
+  </div>
+</div>

@@ -1,35 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-  <h2>Welcome to Custom Search Engine</h2>
-
-
-  <div class="container color-dark">
-    <form>    
-      <div class="col">
-            <input type="text" class="txt" name="txtSearch" placeholder="Enter Your Search Text..." [(ngModel)]="SearchText" >
-            <input type="submit" value="Submit" class="btn">            
-      </div>
-  </form>
-  </div>
-
-  <div class="container color-light">
-      <div class="col">
-          <p>Search Result of {{SearchText}}</p>
-          <table class="table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Snippet</th>
-                  <th>Option</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3">No Results</td>
-                </tr>
-              </tfoot>
-          </table>
-       </div>      
-  </div>
+<ul>
+  <li><a routerLink="">Home</a></li>
+  <li><a routerLink="about">About</a></li>
+</ul>
+<ngx-spinner></ngx-spinner>
 <router-outlet></router-outlet>
